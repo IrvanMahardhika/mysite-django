@@ -1,0 +1,13 @@
+<!-- folder 'templates' is manually created, not built in, and it has to be named 'templates' -->
+<!-- subfolder 'polls' inside 'templates', has to be named 'polls', same as the app name  -->
+
+<!-- to import base template from 'base.html' -->
+{% extends 'polls/base.html' %}
+
+<!--  -->
+{% block title %} Van's website from home {% endblock %}
+
+<!--  -->
+{% block content %}
+<h1>Home Page</h1>
+{% endblock %}

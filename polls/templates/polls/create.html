@@ -1,0 +1,31 @@
+<!-- folder 'templates' is manually created, not built in, and it has to be named 'templates' -->
+<!-- subfolder 'polls' inside 'templates', has to be named 'polls', same as the app name  -->
+
+<!-- to import base template from 'base.html' -->
+{% extends 'polls/base.html' %}
+
+<!--  -->
+{% block title %} Create New List {% endblock %}
+
+<!--  -->
+{% block content %}
+<!--  -->
+<h3>Create Page</h3>
+
+<form method="POST" action="/create/" class="form-group">
+	<!-- csrf_token has to be set whenever creating form -->
+	{% csrf_token %}
+
+	<div class="input-group mb-3">
+		<!-- according to new bootstrap docs, no need to use input-group-prepend below  -->
+		<!-- <div class="input-group-prepend"> -->
+		<button type="submit" name="save" class="btn btn-success">Create New</button>
+		<!-- </div> -->
+		<!-- default {{form.as_table}} -->
+		<!-- {{form.as_ul}} -->
+		<!-- {{form.as_p}} -->
+		{{form.name}}
+	</div>
+</form>
+<!--  -->
+{% endblock %}

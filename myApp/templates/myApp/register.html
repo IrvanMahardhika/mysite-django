@@ -1,0 +1,23 @@
+<!-- folder 'templates' is manually created, not built in, and it has to be named 'templates' -->
+<!-- subfolder 'myApp' inside 'templates', has to be named 'myApp', same as the app name  -->
+
+<!-- to import base template from 'base.html' -->
+{% extends 'polls/base.html' %}
+
+<!--  -->
+{% block title %} Create account {% endblock %}
+
+<!--  -->
+{% load crispy_forms_tags %}
+
+<!--  -->
+{% block content %}
+<form method="POST" class="form-group">
+	<!-- csrf_token has to be set whenever creating form -->
+	{% csrf_token %}
+
+	<!--  -->
+	{{form|crispy}}
+	<button type="submit" class="btn btn-success">Register</button>
+</form>
+{% endblock %}
